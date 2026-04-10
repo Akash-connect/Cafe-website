@@ -1,0 +1,33 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in touch for bookings, events, or general queries.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-grid">
+        <div class="contact-info premium-card">
+            <h2>Visit Brew Haven</h2>
+            <p><strong>Email:</strong> cafe@example.com</p>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Location:</strong> Pune, Maharashtra</p>
+            <p>We’d love to hear from you. Reach out for reservations or collaborations.</p>
+        </div>
+
+        <div class="contact-form-box premium-card">
+            <h2>Send a Message</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

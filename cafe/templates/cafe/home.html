@@ -1,0 +1,62 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <p class="hero-tag">Premium Coffee • Fresh Food • Cozy Space</p>
+            <h1>Welcome to Brew Haven</h1>
+            <p>
+                Experience handcrafted coffee, freshly baked treats, and a warm atmosphere
+                designed for conversations, work, and relaxation.
+            </p>
+            <div class="hero-buttons">
+                <a href="/menu/" class="btn btn-primary">Explore Menu</a>
+                <a href="/contact/" class="btn btn-secondary">Book a Table</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Why People Love Our Cafe</h2>
+            <p>Simple reasons. Strong experience.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Freshly Brewed</h3>
+                <p>Every cup is made with carefully selected beans and consistent quality.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Luxury Ambience</h3>
+                <p>Soft lighting, clean interiors, and a relaxing space that feels premium.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Delicious Bites</h3>
+                <p>From sandwiches to desserts, everything is prepared to complement your coffee.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="showcase section">
+    <div class="container showcase-grid">
+        <div class="showcase-text">
+            <h2>A Cafe Built for Moments</h2>
+            <p>
+                Whether you're meeting friends, working on your laptop, or enjoying a quiet break,
+                Brew Haven gives you the right mood, the right drink, and the right comfort.
+            </p>
+            <a href="/about/" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="showcase-image-card">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Cafe interior">
+        </div>
+    </div>
+</section>
+{% endblock %}

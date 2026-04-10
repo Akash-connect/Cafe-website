@@ -1,0 +1,53 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <h1>Our Menu</h1>
+        <p>Fresh, curated, and made to match the premium cafe experience.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="menu-grid">
+            {% for item in items %}
+                <div class="menu-card">
+                   {% if item.image %}
+    <img src="{{ item.image.url }}" alt="{{ item.name }}">
+{% else %}
+    {% if item.category == 'coffee' %}
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="{{ item.name }}">
+    {% elif item.category == 'snacks' %}
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=80" alt="{{ item.name }}">
+    {% elif item.category == 'desserts' %}
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=80" alt="{{ item.name }}">
+    {% else %}
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="{{ item.name }}">
+    {% endif %}
+{% endif %} 
+                    <div class="menu-card-body">
+                        <div class="menu-title-row">
+                            <h3>{{ item.name }}</h3>
+                            <span>₹{{ item.price }}</span>
+                        </div>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No menu items available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<div class="filter-bar">
+    <a href="/menu/">All</a>
+    <a href="/menu/?category=coffee">Coffee</a>
+    <a href="/menu/?category=snacks">Snacks</a>
+    <a href="/menu/?category=desserts">Desserts</a>
+</div>
+
+
+{% endblock %}
